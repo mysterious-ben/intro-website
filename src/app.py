@@ -11,7 +11,7 @@ flask_app = flask.Flask(__name__)
 dash_app = dash.Dash(
     __name__,
     server=flask_app,
-    meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}],
+    # meta_tags=[{'name': 'viewport', 'content': 'width=device-width, initial-scale=0.95'}],
     external_stylesheets=['../static/css/awesome-ds.css'],
     url_base_pathname='/_dash/',
 )
@@ -27,7 +27,7 @@ def update_graph_scatter(_):
 
 @flask_app.route('/')
 def index():
-    return flask.render_template('index.html', graphics='placeholder')
+    return flask.render_template('index.html')
 
 
 if __name__ == '__main__':
