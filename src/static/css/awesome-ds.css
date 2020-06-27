@@ -1,0 +1,46 @@
+/* Grid */
+
+.column {
+  flex-basis: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .column {flex: 1;}
+  ._25 {flex: 2.5;}
+  ._10 {flex: 1.0;}
+  ._05 {flex: 0.5;}
+}
+/* Style */
+
+body {
+  font-family: monospace;
+  font-size: 1.3em;
+  color: #ccc;
+  background: #000;
+  margin-bottom: 70px;
+}
+
+.column {
+  padding: 5px;
+  border: 1px solid #666;
+  margin: 5px 0;
+  background: #343436;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
