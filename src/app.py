@@ -30,6 +30,11 @@ def index():
     return flask.render_template('index.html')
 
 
+@flask_app.route('/cv')
+def cv():
+    return flask.render_template('cv.html')
+
+
 if __name__ == '__main__':
     import waitress
     waitress.serve(app, host=config.server_host, port=config.server_port)

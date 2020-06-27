@@ -31,7 +31,7 @@ body {
 }
 
 .column {
-  padding: 0px;
+  padding: 0px 10px;
   margin: 5px 5px;
 }
 
@@ -52,3 +52,16 @@ h1, h2, h3 {
   text-align: center;
 }
 
+a:link, a:visited {
+  background-color: transparent;
+  color: #eee;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  color: #fff;
+  background-color: #17202a;
+}
