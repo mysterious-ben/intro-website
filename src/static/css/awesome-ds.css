@@ -25,6 +25,11 @@ body {
   margin-bottom: 70px;
 }
 
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
 .column {
   padding: 5px;
   border: 1px solid #666;
@@ -44,3 +49,4 @@ h1 {
 h1, h2, h3 {
   text-align: center;
 }
+
