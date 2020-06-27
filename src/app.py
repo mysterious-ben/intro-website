@@ -1,14 +1,14 @@
-from flask import Flask, request, jsonify, render_template
+import flask
 
 from src import config
 
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return flask.render_template('index.html', graphics='placeholder')
 
 
 if __name__ == '__main__':
