@@ -1,17 +1,10 @@
 import math
-import numpy as np
 from plotly import graph_objects as go
 import dash_html_components as html
 import dash_core_components as dcc
 
 from src import config
-
-
-def _get_data():
-    dx = np.random.normal(0, config.std, config.n_points * config.n_lines).reshape(config.n_points, config.n_lines)
-    dx[0, :] = 0
-    x = np.cumsum(dx, axis=0)
-    return x
+from src.dash.data import _get_data
 
 
 def _get_traces():
