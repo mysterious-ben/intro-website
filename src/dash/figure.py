@@ -26,7 +26,8 @@ def _get_traces():
             name='feed {}'.format(i),
             mode='lines+markers',
             line=dict(width=1),
-            marker=dict(size=3)
+            marker=dict(size=3),
+            hoverinfo='none',
         ))
     return traces
 
@@ -60,6 +61,7 @@ def generate_layout():
                 id='brownian-motion-plot', figure=get_figure(), animate=True,
                 config={
                     'displayModeBar': False,
+                    'scrollZoom': False,
                 },
                 style={'height': '95vh'},
             ),
