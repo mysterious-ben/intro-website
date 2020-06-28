@@ -32,7 +32,19 @@ def index():
 
 @flask_app.route('/cv')
 def cv():
-    return flask.render_template('cv.html')
+    email_name, email_domain = __config.email.split('@')
+    return flask.render_template(
+        'cv.html',
+        xmlparser_project_link=__config.xmlparser_project_link,
+        website_project_link=__config.website_project_link,
+        sales_project_link=__config.sales_project_link,
+        titanic_project_link=__config.titanic_project_link,
+        toptal_profile_link=__config.toptal_profile_link,
+        linkedin_profile_link=__config.linkedin_profile_link,
+        github_profile_link=__config.github_profile_link,
+        email_name=email_name,
+        email_domain=email_domain,
+    )
 
 
 if __name__ == '__main__':

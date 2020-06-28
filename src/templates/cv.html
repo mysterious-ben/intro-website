@@ -5,24 +5,97 @@
     <title>Remote Data Science CV</title>
 
      <!-- CSS Flex Layout -->
-    <link rel="stylesheet"  href="../static/css/awesome-ds.css">
+    <link rel="stylesheet"  href="/static/css/awesome-ds.css">
 </head>
-<body>
+<body style="max-width:1600px;margin:0 auto;">
     <div class="row">
-        <div class="column border">
-            <h1>Skills</h1>
-            <p>Some skills...</p>
-        </div>
-        <div class="column border">
-            <h1>Work Experience</h1>
-            <p>Some jobs and projects...</p>
+        <div class="column">
+            <h1>Remote Data Scientist</h1>
+            <h3>Full Stack, Python</h3>
         </div>
     </div>
+
     <div class="row">
-        <div class="column border">
-            <h1>Public profiles</h1>
-            <p>Toptal</p>
-            <p>LinkedIn</p>
+        <div class="column centered"><a href="{{toptal_profile_link}}"><img class="icon" src="/static/images/toptal_logo.svg" alt="Toptal"></a></div>
+        <div class="column centered"><a href="{{linkedin_profile_link}}"><img class="icon2" src="/static/images/linkedin_logo.png" alt="LinkedIn"></a></div>
+        <div class="column centered"><a href="{{github_profile_link}}"><img class="icon" src="/static/images/github_logo.png" alt="GitHub"></a></div>
+        <div class="column centered"><span class="icon_email">{{email_name}}<span style="display: none;">REMOVE</span>@{{email_domain}}</span></div>
+    </div>
+
+    <div class="row">
+        <div class="column border padding">
+            <h2>Skills</h2>
+            <h4>Machine Learning</h4>
+            <ul>
+                <li>Typical Supervised: Linear, GAM, Random Forests + Boosting, Bayesian</li>
+                <li>Typical Unsupervised: Embeddings, Cluster Analysis</li>
+                <li>Time Series: Spate Space Models</li>
+                <li>Also: Feature Engineering, Model Regularization, Hyper-parameter Tuning</li>
+            </ul>
+            <div class="indent"><code>scikit-learn</code> <code>statsmodels</code> <code>lightgbm</code> <code>scikit-optimize</code> <code>numpyro</code></div>
+
+            <h4>Data Engineering</h4>
+            <ul>
+                <li>Data Crunching and Cleaning: SQL, Python</li>
+                <li>Cloud Storage and Computing: AWS S3 + Athena, Spark SQL</li>
+            </ul>
+            <div class="indent"><code>pandas</code> <code>dask</code> <code>sqlite3</code> <code>cx_oracle</code> <code>sqlalchemy</code> <code>boto3</code> <code>pyspark</code></div>
+
+            <h4>Software Engineering</h4>
+            <ul>
+                <li>End-to-End ML Pipelines</li>
+                <li>Production-Ready Code with Tests, Logging and Monitoring</li>
+                <li>High-Performance Computations</li>
+            </ul>
+            <div class="indent"><code>prefect</code> <code>requests</code> <code>pytest</code> <code>logging</code> <code>Kibana</code> <code>Git</code> <code>numba</code> <code>jax</code></div>
+
+            <h4>Data Visualization</h4>
+            <ul>
+                <li>Interactive Plots</li>
+                <li>Web Dashboards</li>
+            </ul>
+            <div class="indent"><code>matplotlib</code> <code>plotly</code> <code>dash</code> <code>flask</code></div>
+
+            <h4>Other</h4>
+            <ul>
+                <li>Knowledge of Systematic Trading and Optimal Order Execution</li>
+                <li>Knowledge of Crude and Power Markets</li>
+                <li>Project Management and Stakeholder Engagement</li>
+            </ul>
+        </div>
+
+        <div class="column border padding">
+            <h2>Work Experience</h2>
+            <dl>
+                <dt>07/2020 - present: Remote Data Science, Toptal</dt>
+                <dd>Using abstract models that add real value</dd>
+                <dt>01/2019 - 06/2020: Data Science, Vitol</dt>
+                <dd>Conquering energy markets with the power of ML</dd>
+                <dt>01/2019 - 06/2020: Model Validation, JPMorgan</dt>
+                <dd>Challenging option pricing models in commodities</dd>
+                <dt>05/2016 - 10/2016: Algorithmic Trading, Credit Suisse</dt>
+                <dd>Seeking for alpha in commodities and equities</dd>
+            </dl>
+
+            <h2>Academia Degrees</h2>
+            <dl>
+                <dt>MSc in Financial Mathematics, Pierre and Marie Curie University</dt>
+                <dt>MSc in Applied Mathematics, Ecole Polytechnique</dt>
+                <dt>MSc in Mathematics and Computer Science, Novosibirsk State University</dt>
+                <dt>BSc in Probability and Statistics, Novosibirsk State University</dt>
+            </dl>
+
+            <h2>Interesting Projects</h2>
+            <dl>
+                <dt>Yet another XML parser</dt>
+                <dd>Wrote a simple yet efficient python package <a href="{{xmlparser_project_link}}">(link)</a></dd>
+                <dt>Interactive Website</dt>
+                <dd>Wrote this very website <a href="{{website_project_link}}">(link)</a></dd>
+                <dt>Forecast Sales Kaggle Competition</dt>
+                <dd>Created a simple model that won the competition <a href="{{sales_project_link}}">(link)</a></dd>
+                <dt>Titanic Kaggle Competition</dt>
+                <dd>Used it as a playground for classification algorithms <a href="{{titanic_project_link}}">(link)</a></dd>
+            </dl>
         </div>
     </div>
 </body>
