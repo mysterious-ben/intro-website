@@ -11,4 +11,4 @@ dist/
 notebooks/
 .ipynb_checkpoints/
 
-config.py
+__*

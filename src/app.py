@@ -4,7 +4,7 @@ from dash.dependencies import Output, Input
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 from src.dash import figure as dash_figure
-from src import config
+from src import __config
 
 
 flask_app = flask.Flask(__name__)
@@ -37,7 +37,7 @@ def cv():
 
 if __name__ == '__main__':
     import waitress
-    waitress.serve(app, host=config.server_host, port=config.server_port)
+    waitress.serve(app, host=__config.server_host, port=__config.server_port)
 
 
 
