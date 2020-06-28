@@ -61,10 +61,12 @@ def generate_layout():
                     'displayModeBar': False,
                     'scrollZoom': False,
                 },
-                style={'height': '95vh'},
+                style={'height': '92vh'},
             ),
             dcc.Interval(id='clock', interval=1 * 1000, max_intervals=-1, n_intervals=0),
+            html.Button(id='change-lines-button', n_clicks=0, children='Add a line!'),
             ],
+            style={'text-align': 'center'},
         )
     )
     return layout

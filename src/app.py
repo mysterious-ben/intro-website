@@ -30,6 +30,24 @@ def update_graph_scatter(_):
     return dash_figure.get_figure()
 
 
+@dash_app.callback(Output('change-lines-button', 'children'),
+                   [Input('change-lines-button', 'n_clicks')])
+def change_color_graph_scatter(n_clicks):
+    from src import config
+    if config.n_lines <= 3:
+        if n_clicks > 0:
+            config.n_lines += 1
+            return "Oh no, that's too many lines. Remove ones!"
+        else:
+            return "I want to add a line!"
+    else:
+        if n_clicks > 0:
+            config.n_lines -= 1
+            return "Hmmm, on the second thought... Add it back!"
+        else:
+            return "I want to remove a line!"
+
+
 @flask_app.route('/')
 def index():
     return flask.render_template('index.html')
