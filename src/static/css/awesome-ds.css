@@ -40,7 +40,10 @@ body {
 }
 
 .padding {
-  padding: 10px 15px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
 
 main {
@@ -71,11 +74,15 @@ a:hover, a:active {
 }
 
 code {
-  background-color: #17202a
+  color: #cac;
 }
 
 .indent {
-  padding-left : 30px;
+  padding-left : 25px;
+}
+
+.bmargin {
+  margin-bottom: 25px;
 }
 
 dt {
@@ -86,11 +93,12 @@ dt {
 h4 {
   margin-top: 15px;
   margin-bottom: 0px;
+  font-size: 1em;
 }
 
 ul {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .centered {
