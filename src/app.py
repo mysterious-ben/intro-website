@@ -1,3 +1,8 @@
+"""
+Main script: execute to start the server
+"""
+
+
 import flask
 import dash
 from dash.dependencies import Output, Input

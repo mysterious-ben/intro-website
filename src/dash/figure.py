@@ -1,3 +1,8 @@
+"""
+Generate Dash figure
+"""
+
+
 import math
 from plotly import graph_objects as go
 import dash_html_components as html
