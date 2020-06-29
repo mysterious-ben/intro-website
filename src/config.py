@@ -2,10 +2,21 @@
 Public config
 """
 
+# --- Index Page Plot ---
 
-# --- Plot ---
+plot_n_points = 100
+plot_n_lines = 3
+plot_std = 0.1
+plot_y_scale = 3.
+plot_rand_seconds = 2
 
-n_points = 100
-n_lines = 3
-std = 0.1
-yaxis_factor = 3.
+
+# --- Logging in UTC timezone ---
+
+logging_fpath = '../logs/log.log'
+logging_format = '%(asctime)s.%(msecs)03d UTC %(levelname)s: %(message)s'
+logging_datefmt = '%Y-%m-%dT%H:%M:%S'
+# logging_datefmt = '%Y-%m-%dT%H:%M:%S.%f+%Z'
+logging_level = 'DEBUG'
+logging_maxbytes = 10 * 1024 * 1024
+logging_backups = 1

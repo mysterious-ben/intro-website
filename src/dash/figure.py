@@ -32,12 +32,12 @@ def _get_traces():
 
 def get_figure():
     traces = _get_traces()
-    y_lim = math.sqrt(config.n_points) * config.std * config.yaxis_factor
+    y_lim = math.sqrt(config.plot_n_points) * config.plot_std * config.plot_y_scale
     fig = go.Figure(
         data=traces,
         layout=go.Layout(
             template='plotly_dark',
-            xaxis=dict(range=[0, config.n_points - 1], autorange=False, zeroline=False, showticklabels=False),
+            xaxis=dict(range=[0, config.plot_n_points - 1], autorange=False, zeroline=False, showticklabels=False),
             yaxis=dict(
                 range=[-y_lim, y_lim],
                 autorange=False, zeroline=False, showticklabels=False,
@@ -63,7 +63,7 @@ def generate_layout():
                 },
                 style={'height': '92vh'},
             ),
-            dcc.Interval(id='clock', interval=1 * 1000, max_intervals=-1, n_intervals=0),
+            dcc.Interval(id='clock', interval=config.plot_rand_seconds * 1000, max_intervals=-1, n_intervals=0),
             html.Button(id='change-lines-button', n_clicks=0, children='Add a line!'),
             ],
             style={'text-align': 'center'},

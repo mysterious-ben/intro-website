@@ -10,6 +10,27 @@ from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 from src.dash import figure as dash_figure
 from src import __config
+from src import config
+
+
+import logging
+from logging.handlers import RotatingFileHandler
+import time
+from pathlib import Path
+logger = logging.getLogger('waitress')
+logger.propagate = False
+logging_path = Path(config.logging_fpath)
+logging_path.parent.mkdir(exist_ok=True)
+formatter = logging.Formatter(config.logging_format, datefmt=config.logging_datefmt)
+formatter.converter = time.gmtime
+sh = logging.StreamHandler()
+sh.setFormatter(formatter)
+sh.setLevel(config.logging_level)
+fh = RotatingFileHandler(config.logging_fpath, mode='a', maxBytes=config.logging_maxbytes, backupCount=config.logging_backups)
+fh.setFormatter(formatter)
+fh.setLevel(config.logging_level)
+logger.addHandler(sh)
+logger.addHandler(fh)
 
 
 flask_app = flask.Flask(__name__)
@@ -34,15 +55,15 @@ def update_graph_scatter(_):
                    [Input('change-lines-button', 'n_clicks')])
 def change_color_graph_scatter(n_clicks):
     from src import config
-    if config.n_lines <= 3:
+    if config.plot_n_lines <= 3:
         if n_clicks > 0:
-            config.n_lines += 1
+            config.plot_n_lines += 1
             return "Oh no, that's too many lines. Remove ones!"
         else:
             return "I want to add a line!"
     else:
         if n_clicks > 0:
-            config.n_lines -= 1
+            config.plot_n_lines -= 1
             return "Hmmm, on the second thought... Add it back!"
         else:
             return "I want to remove a line!"
@@ -72,7 +93,5 @@ def cv():
 
 if __name__ == '__main__':
     import waitress
-    waitress.serve(app, host=__config.server_host, port=__config.server_port)
-
-
+    waitress.serve(app, host=__config.server_host, port=__config.server_port, threads=__config.server_n_threads)
 
