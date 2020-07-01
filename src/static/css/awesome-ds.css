@@ -106,28 +106,21 @@ ul {
 }
 
 .icon {
-  height: 36px;
+  height: 24px;
   background-color: #eee;
-  margin-top:4px;
-  display: inline-block;
-}
-
-.icon2 {
-  height: 28px;
-  background-color: #eee;
-  border: 4px solid #eee;
+  border: 6px solid #eee;
   margin-top: 4px;
   display: inline-block;
 }
 
 .icon_email {
-  font-size:1.2em;
+  font-size:1em;
   font-weight:bold;
   text-shadow:none;
   color:black;
   background-color:#eee;
-  margin-top:4px;
-  padding:4px;
+  margin-top: 8px;
+  padding: 5px;
   display:inline-block;
 }
 
