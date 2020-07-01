@@ -2,6 +2,13 @@
 Main script: execute to start the server
 """
 
+#TODO: LnkedIn logo with Adblock
+#TODO: network activity logging
+#TODO: notification on error
+#TODO: inscrease "see profile" href area
+#TODO: hide "see profile"
+#TODO: [optional] CPU/RAM monitoring
+
 
 import flask
 import dash
@@ -64,7 +71,7 @@ def change_color_graph_scatter(n_clicks):
             return "I want to add a line!"
     else:
         if n_clicks > 0:
-            config.plot_n_lines -= 1
+            config.plot_n_lines = max(config.plot_n_lines-1, 0)
             return "Hmmm, on the second thought... Add it back!"
         else:
             return "I want to remove a line!"
