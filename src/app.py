@@ -8,6 +8,7 @@ import dash
 from dash.dependencies import Output, Input
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
+import src.config
 from src.dash import figure as dash_figure
 from src import __config
 from src import config
@@ -93,5 +94,5 @@ def cv():
 
 if __name__ == '__main__':
     import waitress
-    waitress.serve(app, host=__config.server_host, port=__config.server_port, threads=__config.server_n_threads)
+    waitress.serve(app, host=src.config.server_host, port=src.config.server_port, threads=src.config.server_n_threads)
 

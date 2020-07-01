@@ -2,6 +2,14 @@
 Public config
 """
 
+
+# --- Server ---
+
+server_host = '0.0.0.0'
+server_port = '8001'
+server_n_threads = 4
+
+
 # --- Index Page Plot ---
 
 plot_n_points = 100
