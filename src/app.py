@@ -5,11 +5,10 @@ Main script: execute to start the server
 #TODO: email size and position
 #TODO: network activity logging
 #TODO: notification on error
-#TODO: inscrease "see profile" href area
-#TODO: hide "see profile"
 #TODO: increase threads (?)
 #TODO: remove plot zoom
 #TODO: [optional] CPU/RAM monitoring
+#TODO: hide "see profile"
 
 
 import flask
