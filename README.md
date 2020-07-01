@@ -14,8 +14,8 @@ pip -r requirements.txt
 
 ## Start Server
 
-1. Check/update `config.py`
-2. Add `__config.py`
+1. Check/update `src/config.py`
+2. Add `src/__config.py`
 3. From the project folder, run `python -m src.app`
     - To downgrade priority below -10 (soft CPU limit): `nice -n 0 python -m src.app`
     - To limit RAM to 500MB: `ulimit -v 500000 && python -m src.app`
