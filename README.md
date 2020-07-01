@@ -7,6 +7,7 @@ A very simple website powered by Flask and Dash
 (in a separate environment)
 ```shell script
 git clone https://github.com/mysterious-ben/intro-website
+cd intro-website
 pip -r requirements.txt
 ```
 
