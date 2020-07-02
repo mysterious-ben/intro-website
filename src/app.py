@@ -24,6 +24,7 @@ from logging.handlers import RotatingFileHandler
 import time
 from pathlib import Path
 logger = logging.getLogger('waitress')
+logger.handlers.clear()
 logger.propagate = False
 logging_path = Path(config.logging_fpath)
 logging_path.parent.mkdir(exist_ok=True)

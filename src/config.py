@@ -2,6 +2,8 @@
 Public config
 """
 
+from pathlib import Path
+
 
 # --- Server ---
 
@@ -21,7 +23,7 @@ plot_rand_seconds = 2
 
 # --- Logging in UTC timezone ---
 
-logging_fpath = '../logs/log.log'
+logging_fpath = Path(__file__).absolute().parent.parent / 'logs/intro_website.log'
 logging_format = '%(asctime)s.%(msecs)03d UTC %(levelname)s: %(message)s'
 logging_datefmt = '%Y-%m-%dT%H:%M:%S'
 # logging_datefmt = '%Y-%m-%dT%H:%M:%S.%f+%Z'
