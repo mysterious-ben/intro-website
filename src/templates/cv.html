@@ -7,19 +7,23 @@
      <!-- CSS Flex Layout -->
     <link rel="stylesheet"  href="/static/css/awesome-ds.css">
 </head>
-<body style="max-width:1600px;margin:0 auto;">
+<body style="max-width:1560px;margin:0 auto 0 auto;">
     <div class="row">
         <div class="column">
-            <h1>Remote Data Scientist</h1>
-            <h3>Full Stack, Python</h3>
+            <h1 style="margin-bottom:10px;">Remote Data Scientist</h1>
+            <h3 style="margin-bottom:15px;">Python, Full Stack</h3>
         </div>
     </div>
 
-    <div class="row">
-        <div class="column centered"><a href="{{toptal_profile_link}}"><img class="icon" src="/static/images/toptal2_logo.svg" alt="Toptal"></a></div>
-        <div class="column centered"><a href="{{linkedin_profile_link}}"><img class="icon" src="/static/images/linked2_logo.png" alt="LinkedIn"></a></div>
-        <div class="column centered"><a href="{{github_profile_link}}"><img class="icon" src="/static/images/github2_logo.png" alt="GitHub"></a></div>
-        <div class="column centered"><span class="icon_email">{{email_name}}<span style="display: none;">REMOVE</span>@{{email_domain}}</span></div>
+    <div class="" style="display:flex;flex-direction:row;justify-content:center;align-items:center;margin-bottom:15px">
+        <div class="row centered" style="flex: 0 1 280px; justify-content:space-evenly">
+            <a href="{{toptal_profile_link}}"><img class="icon" src="/static/images/toptal2_logo.svg" alt="Toptal"></a>
+            <a href="{{linkedin_profile_link}}"><img class="icon" src="/static/images/linked2_logo.png" alt="LinkedIn"></a>
+            <a href="{{github_profile_link}}"><img class="icon" src="/static/images/github2_logo.png" alt="GitHub"></a>
+        </div>
+        <div class="row centered" style="flex: 0 1 280px;justify-content:center;align-items:center;">
+            <p class="icon_email">{{email_name}}<span style="display: none;">REMOVE</span>@{{email_domain}}</p>
+        </div>
     </div>
 
     <div class="row">
@@ -68,13 +72,13 @@
             <h2>Work Experience</h2>
             <dl class="bmargin">
                 <dt>07/2020 - present: Remote Data Science, Toptal</dt>
-                <dd>Using abstract models that add real value</dd>
+                <dd>Building abstract models that add real value</dd>
                 <dt>01/2019 - 06/2020: Data Science, Vitol</dt>
                 <dd>Conquering energy markets with the power of ML</dd>
                 <dt>01/2019 - 06/2020: Model Validation, JPMorgan</dt>
-                <dd>Challenging option pricing models in commodities</dd>
+                <dd>Challenging pricing models for commodity options</dd>
                 <dt>05/2016 - 10/2016: Algorithmic Trading, Credit Suisse</dt>
-                <dd>Seeking for alpha in commodities and equities</dd>
+                <dd>Seeking for alpha in commodity and equity markets</dd>
             </dl>
 
             <h2>Academia Degrees</h2>
@@ -88,13 +92,13 @@
             <h2>Personal Projects</h2>
             <dl>
                 <dt>Yet another XML parser</dt>
-                <dd>Wrote a simple yet efficient python package <a href="{{xmlparser_project_link}}">(link)</a></dd>
+                <dd>A simple yet efficient python package to parse XML <a href="{{xmlparser_project_link}}">(link)</a></dd>
                 <dt>Interactive Website</dt>
-                <dd>Wrote this very website <a href="{{website_project_link}}">(link)</a></dd>
+                <dd>This very website via Flask + Dash <a href="{{website_project_link}}">(link)</a></dd>
                 <dt>Forecast Sales Kaggle Competition</dt>
-                <dd>Created a simple model that won the competition <a href="{{sales_project_link}}">(link)</a></dd>
+                <dd>A surprisingly simple model that won the competition <a href="{{sales_project_link}}">(link)</a></dd>
                 <dt>Titanic Kaggle Competition</dt>
-                <dd>Used it as a playground for classification algorithms <a href="{{titanic_project_link}}">(link)</a></dd>
+                <dd>A playground for testing various classification algorithms <a href="{{titanic_project_link}}">(link)</a></dd>
             </dl>
         </div>
     </div>

@@ -61,12 +61,35 @@ def generate_layout():
                     'displayModeBar': False,
                     'scrollZoom': False,
                 },
-                style={'height': '92vh'},
+                style={
+                    'display': 'flex',
+                    'flex': '2 1',
+                    'flex-direction': 'column',
+                    'width': '99vw',
+                    'max-height': '92vh',
+                },
+            ),
+            html.Button(
+                children='Add a line!',
+                id='change-lines-button',
+                n_clicks=0,
+                style={
+                    # 'display': 'flex',
+                    # 'flex': '0 1',
+                    # 'flex-direction': 'column',
+                    # 'min-height': '4vh',
+                }
             ),
             dcc.Interval(id='clock', interval=config.plot_rand_seconds * 1000, max_intervals=-1, n_intervals=0),
-            html.Button(id='change-lines-button', n_clicks=0, children='Add a line!'),
             ],
-            style={'text-align': 'center'},
+            style={
+                'display': 'flex',
+                'flex-direction': 'column',
+                'justify-content': 'space-between',
+                'align-items': 'center',
+                # 'text-align': 'center',
+                'height': '99vh',
+            },
         )
     )
     return layout
