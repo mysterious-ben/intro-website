@@ -7,7 +7,7 @@ Public config
 
 server_host = '0.0.0.0'
 server_port = '8001'
-server_n_threads = 4
+server_n_threads = 6
 
 
 # --- Index Page Plot ---

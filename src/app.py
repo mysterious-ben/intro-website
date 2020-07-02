@@ -4,7 +4,6 @@ Main script: execute to start the server
 
 #TODO: network activity logging
 #TODO: notification on error
-#TODO: increase threads (?)
 #TODO: [optional] CPU/RAM monitoring
 #TODO: hide "see profile"
 
