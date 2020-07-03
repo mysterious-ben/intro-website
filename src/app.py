@@ -5,6 +5,7 @@ Main script: execute to start the server
 #TODO: network activity logging
 #TODO: notification on error
 #TODO: [optional] CPU/RAM monitoring
+#TODO: [optional] font: helvica
 #TODO: hide "see profile"
 
 
