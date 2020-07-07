@@ -103,7 +103,7 @@ def cv():
         xmlparser_project_link=__config.xmlparser_project_link,
         website_project_link=__config.website_project_link,
         sales_project_link=__config.sales_project_link,
-        titanic_project_link=__config.titanic_project_link,
+        embeddings_project_link=__config.embeddings_project_link,
         toptal_profile_link=__config.toptal_profile_link,
         linkedin_profile_link=__config.linkedin_profile_link,
         github_profile_link=__config.github_profile_link,
