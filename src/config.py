@@ -30,3 +30,9 @@ logging_datefmt = '%Y-%m-%dT%H:%M:%S'
 logging_level = 'DEBUG'
 logging_maxbytes = 10 * 1024 * 1024
 logging_backups = 1
+
+
+# --- Notifications ---
+
+pushover_on = True
+pushover_level = 'WARNING'

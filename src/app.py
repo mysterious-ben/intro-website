@@ -3,10 +3,6 @@ Main script: execute to start the server
 """
 
 
-# TODO: send a notification on error
-#   via sentry: https://flask.palletsprojects.com/en/1.1.x/errorhandling/
-
-
 import flask
 import flask_monitoringdashboard
 import dash
@@ -35,6 +31,7 @@ dash_app = dash.Dash(
 dash_app.layout = dash_figure.generate_layout()
 app = DispatcherMiddleware(flask_app, {'/dash': dash_app.server})
 
+
 # - Add a monitoring dashboard for the Flask app
 flask_monitoringdashboard.config.link = __config.dashboard_link
 flask_monitoringdashboard.config.username = __config.dashboard_username
@@ -43,6 +40,7 @@ flask_monitoringdashboard.config.guest_username = __config.dashboard_guest_usern
 flask_monitoringdashboard.config.guest_password = __config.dashboard_guest_password
 flask_monitoringdashboard.config.database_name = __config.dashboard_database_name
 flask_monitoringdashboard.bind(flask_app)
+
 
 # - Configure logging
 logger = logging.getLogger('waitress')
@@ -59,6 +57,18 @@ fh.setFormatter(formatter)
 logger.addHandler(sh)
 logger.addHandler(fh)
 logger.setLevel(config.logging_level)
+
+if config.pushover_on:
+    from notifiers.logging import NotificationHandler
+    ph = NotificationHandler(
+        'pushover',
+        defaults=dict(
+            user=__config.pushover_user,
+            token=__config.pushover_token,
+        ),
+        level=config.pushover_level,
+    )
+    logger.addHandler(ph)
 
 flask_app.logger.propagate = False
 flask_app.logger.handlers = logger.handlers

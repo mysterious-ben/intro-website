@@ -5,3 +5,4 @@ numpy==1.18.4
 waitress==1.4.4
 Flask==1.1.2
 flask_monitoringdashboard==3.0.9
+notifiers==1.2.1
