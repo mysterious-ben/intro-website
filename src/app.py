@@ -48,7 +48,7 @@ logger.propagate = False
 logging_path = Path(config.logging_fpath)
 logging_path.parent.mkdir(exist_ok=True)
 formatter = logging.Formatter(config.logging_format, datefmt=config.logging_datefmt)
-formatter.converter = time.gmtime
+formatter.converter = time.gmtime  # type: ignore
 sh = logging.StreamHandler()
 sh.setFormatter(formatter)
 fh = RotatingFileHandler(
