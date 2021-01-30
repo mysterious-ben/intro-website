@@ -116,13 +116,6 @@ def cv():
     email_name, email_domain = __config.email.split("@")
     return flask.render_template(
         "cv.html",
-        xmlparser_project_link=__config.xmlparser_project_link,
-        website_project_link=__config.website_project_link,
-        sales_project_link=__config.sales_project_link,
-        embeddings_project_link=__config.embeddings_project_link,
-        toptal_profile_link=__config.toptal_profile_link,
-        linkedin_profile_link=__config.linkedin_profile_link,
-        github_profile_link=__config.github_profile_link,
         email_name=email_name,
         email_domain=email_domain,
     )
