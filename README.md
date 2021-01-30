@@ -4,18 +4,26 @@ A very simple website powered by Flask and Dash
 
 ## Installation
 
-(in a separate environment)
+1. Clone the project
 ```shell script
 git clone https://github.com/mysterious-ben/intro-website
 cd intro-website
-pip -r requirements.txt
 ```
+2. Check the public config `src/config.py`
+3. Create the private config `src/__config.py`
 
 
 ## Start Server
 
-1. Check/update `src/config.py`
-2. Add `src/__config.py`
-3. From the project folder, run `python -m src.app`
-    - To downgrade priority below -10 (soft CPU limit): `nice -n 0 python -m src.app`
-    - To limit RAM to 500MB: `ulimit -v 500000 && python -m src.app`
+1. Option 1: run in an environment
+```shell script
+pip -r requirements.txt
+python -m src.app
+```
+- To downgrade priority below -10 (soft CPU limit): `nice -n 0 python -m src.app`
+- To limit RAM to 500MB: `ulimit -v 500000 && python -m src.app`
+
+2. Option 2: Run in a docker container
+```shell script
+docker-compose up
+```
