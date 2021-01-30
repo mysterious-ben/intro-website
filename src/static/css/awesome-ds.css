@@ -91,12 +91,18 @@ code {
 }
 
 .bmargin {
-  margin-bottom: 28px;
+  /* margin-bottom: 28px; */
+  margin-bottom: 35px;
 }
 
 dt {
   margin-top: 5px;
+  margin-bottom: 2px;
   font-weight: bold;
+}
+
+dd {
+  margin-bottom: 10px;
 }
 
 h4 {
