@@ -25,5 +25,5 @@ python -m src.app
 
 2. Option 2: Run in a docker container
 ```shell script
-docker-compose up
+docker-compose up -d
 ```
