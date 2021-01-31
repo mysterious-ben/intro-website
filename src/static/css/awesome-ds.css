@@ -4,7 +4,11 @@
   flex-basis: 100%;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 15px;
+  }
+
   .row {
     display: flex;
     flex-direction: row;
@@ -17,11 +21,18 @@
   ._10 {flex: 1.0;}
   ._05 {flex: 0.5;}
 }
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 15px;
+  }
+}
+
 /* Style */
 
 body {
   font-family: monospace;
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #eee;
   background: #000;
   text-shadow:
