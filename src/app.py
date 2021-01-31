@@ -136,9 +136,9 @@ def change_color_graph_scatter(n_clicks):
     elif n_clicks == 34:
         return "Now you can leave in peace."
     elif n_clicks == 35:
-        return "Continue living your day with a great sense of achievement."
+        return "Keep on living your day, fueled by a great sense of achievement!"
     elif n_clicks == 36:
-        return "Buy now!"
+        return "Bye now."
     elif n_clicks == 37:
         config.plot_n_lines = 3
         return "..."
