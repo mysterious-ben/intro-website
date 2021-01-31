@@ -2,7 +2,6 @@
 Main script: execute to start the server
 """
 
-
 import logging
 import time
 from logging.handlers import RotatingFileHandler
@@ -30,7 +29,6 @@ dash_app = dash.Dash(
 dash_app.layout = dash_figure.generate_layout()
 app = DispatcherMiddleware(flask_app, {"/dash": dash_app.server})
 
-
 # - Add a monitoring dashboard for the Flask app
 flask_monitoringdashboard.config.link = __config.dashboard_link
 flask_monitoringdashboard.config.username = __config.dashboard_username
@@ -39,7 +37,6 @@ flask_monitoringdashboard.config.guest_username = __config.dashboard_guest_usern
 flask_monitoringdashboard.config.guest_password = __config.dashboard_guest_password
 flask_monitoringdashboard.config.database_name = __config.dashboard_database_name
 flask_monitoringdashboard.bind(flask_app)
-
 
 # - Configure logging
 logger = logging.getLogger("waitress")
@@ -92,18 +89,65 @@ def update_graph_scatter(_):
 def change_color_graph_scatter(n_clicks):
     from src import config
 
-    if config.plot_n_lines <= 3:
-        if n_clicks > 0:
+    if n_clicks == 0:
+        return "This is a mysterious button."
+    elif n_clicks < 3:
+        if config.plot_n_lines <= 3:
             config.plot_n_lines += 1
-            return "Oh no, that's too many lines. Remove ones!"
+            return "Hmm... a new line appeared. That's it?"
         else:
-            return "I want to add a line!"
+            config.plot_n_lines -= 1
+            return "Hmm... one line disappeared. That's it?"
+    elif n_clicks == 3:
+        return "Yes, that's it. This button adds and removes lines."
+    elif n_clicks == 4:
+        return "Although..."
+    elif n_clicks == 5:
+        return "It seems that..."
+    elif n_clicks == 6:
+        return "...it doesn't do it anymore."
+    elif n_clicks < 8:
+        return "..."
+    elif n_clicks == 8:
+        return "Is it out of order?"
+    elif n_clicks < 11:
+        return "..."
+    elif n_clicks == 11:
+        return "Yep. You broke it. Well done."
+    elif n_clicks < 25:
+        return "This buttom is out of order."
+    elif n_clicks == 25:
+        return "What? You are still here?"
+    elif n_clicks == 26:
+        return "You have nothing else to do?"
+    elif n_clicks < 28:
+        return "..."
+    elif n_clicks == 28:
+        return "You just won't give up, will you?"
+    elif n_clicks < 31:
+        return "..."
+    elif n_clicks == 31:
+        return "Okay..."
+    elif n_clicks == 32:
+        return "Congratulations!"
+    elif n_clicks == 33:
+        config.plot_n_lines = min(config.plot_n_lines + 3, 10)
+        return "You've just found a easter egg!"
+    elif n_clicks == 34:
+        return "Now you can leave in peace."
+    elif n_clicks == 35:
+        return "Continue living your day with a great sense of achievement."
+    elif n_clicks == 36:
+        return "Buy now!"
+    elif n_clicks == 37:
+        config.plot_n_lines = 3
+        return "..."
+    elif n_clicks == 38:
+        return ".."
+    elif n_clicks == 39:
+        return "."
     else:
-        if n_clicks > 0:
-            config.plot_n_lines = max(config.plot_n_lines - 1, 0)
-            return "Hmmm, on the second thought... Add it back!"
-        else:
-            return "I want to remove a line!"
+        return "-"
 
 
 @flask_app.route("/")
