@@ -90,29 +90,32 @@ def change_color_graph_scatter(n_clicks):
     from src import config
 
     if n_clicks == 0:
+        config.plot_n_lines = min(config.plot_n_lines, 4)
         return "This is a mysterious button."
-    elif n_clicks < 3:
+    elif n_clicks < 4:
         if config.plot_n_lines <= 3:
             config.plot_n_lines += 1
-            return "Hmm... a new line appeared. That's it?"
+            return "Hmm... a new line appeared..."
         else:
             config.plot_n_lines -= 1
-            return "Hmm... one line disappeared. That's it?"
-    elif n_clicks == 3:
-        return "Yes, that's it. This button adds and removes lines."
+            return "Hmm... a line disappeared..."
     elif n_clicks == 4:
-        return "Although..."
+        return "Okay, you got it."
     elif n_clicks == 5:
-        return "It seems that..."
+        return "It adds and removes lines."
     elif n_clicks == 6:
-        return "...it doesn't do it anymore."
-    elif n_clicks < 8:
-        return "..."
+        return "Although..."
+    elif n_clicks == 7:
+        return "It seems that..."
     elif n_clicks == 8:
-        return "Is it out of order?"
-    elif n_clicks < 11:
+        return "...it doesn't do it anymore."
+    elif n_clicks < 10:
         return "..."
-    elif n_clicks == 11:
+    elif n_clicks == 10:
+        return "Is it out of order?"
+    elif n_clicks < 13:
+        return "..."
+    elif n_clicks == 13:
         return "Yep. You broke it. Well done."
     elif n_clicks < 25:
         return "This buttom is out of order."
@@ -134,17 +137,19 @@ def change_color_graph_scatter(n_clicks):
         config.plot_n_lines = min(config.plot_n_lines + 3, 10)
         return "You've just found a easter egg!"
     elif n_clicks == 34:
-        return "Now you can leave in peace."
+        return "Fueled by this sense of achievement..."
     elif n_clicks == 35:
-        return "Keep on living your day, fueled by a great sense of achievement!"
+        return "...keep on living your day!"
     elif n_clicks == 36:
-        return "Bye now."
+        return "Leave in peace."
     elif n_clicks == 37:
+        return "Bye now."
+    elif n_clicks == 38:
         config.plot_n_lines = 3
         return "..."
-    elif n_clicks == 38:
-        return ".."
     elif n_clicks == 39:
+        return ".."
+    elif n_clicks == 40:
         return "."
     else:
         return "-"
