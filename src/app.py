@@ -135,7 +135,7 @@ def change_color_graph_scatter(n_clicks):
         return "Congratulations!"
     elif n_clicks == 33:
         config.plot_n_lines = min(config.plot_n_lines + 3, 10)
-        return "You've just found a easter egg!"
+        return "You've just found an easter egg!"
     elif n_clicks == 34:
         return "Fueled by this sense of achievement..."
     elif n_clicks == 35:
