@@ -79,11 +79,13 @@ def generate_layout():
                         "flex": "2 1",
                         "flex-direction": "column",
                         "width": "99vw",
-                        "max-height": "92vh",
+                        "max-height": "90vh",
+                        "margin-top": "30px",
+                        # "padding-top": "100px",
                     },
                 ),
                 html.Button(
-                    children="Add a line!",
+                    children="Mysterious button",
                     id="change-lines-button",
                     n_clicks=0,
                     style={
@@ -91,6 +93,8 @@ def generate_layout():
                         # 'flex': '0 1',
                         # 'flex-direction': 'column',
                         # 'min-height': '4vh',
+                        "margin-bottom": "30px",
+                        # "padding-bottom": "50px",
                     },
                 ),
                 dcc.Interval(

@@ -5,10 +5,6 @@
 }
 
 @media screen and (min-width: 900px) {
-  html {
-    font-size: 15px;
-  }
-
   .row {
     display: flex;
     flex-direction: row;
@@ -22,9 +18,13 @@
   ._05 {flex: 0.5;}
 }
 
-@media screen and (max-width: 900px) {
+html {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
@@ -103,7 +103,7 @@ code {
 
 .bmargin {
   /* margin-bottom: 28px; */
-  margin-bottom: 35px;
+  margin-bottom: 32px;
 }
 
 dt {
@@ -113,7 +113,7 @@ dt {
 }
 
 dd {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 h4 {
