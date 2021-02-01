@@ -4,7 +4,20 @@
   flex-basis: 100%;
 }
 
+html {font-size: 14px;}
+h1 {font-size: 1.7em;}
+h2 {font-size: 1.4em;}
+h3 {font-size: 1.4em;}
+
+@media screen and (min-width: 700px) {
+  html {font-size: 15px;}
+}
+
 @media screen and (min-width: 900px) {
+  html {font-size: 15px;}
+  h1 {font-size: 2.2em;}
+  h2 {font-size: 1.6em;}
+  h3 {font-size: 1.5em;}
   .row {
     display: flex;
     flex-direction: row;
@@ -18,19 +31,6 @@
   ._05 {flex: 0.5;}
 }
 
-html {font-size: 15px;}
-
-h1 {font-size: 2.2em;}
-h2 {font-size: 1.6em;}
-h3 {font-size: 1.5em;}
-
-@media screen and (max-width: 700px) {
-  html {font-size: 14px;}
-
-  h1 {font-size: 1.7em;}
-  h2 {font-size: 1.4em;}
-  h3 {font-size: 1.4em;}
-}
 
 /* Style */
 
