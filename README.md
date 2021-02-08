@@ -13,6 +13,7 @@ cd intro-website
 3. Create the private config `src/__config.py`
 
 **Development**
+
 4. Install packages (in an environment): 
 ```shell script
 pip -r requirements.txt
