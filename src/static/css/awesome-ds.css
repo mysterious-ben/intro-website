@@ -160,3 +160,8 @@ button:hover {
   color: #3030da;
   border: 2px solid #3030da;
 }
+
+::-moz-selection {
+  background: Highlight;
+  color: HighlightText;
+}
