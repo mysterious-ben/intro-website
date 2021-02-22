@@ -40,10 +40,14 @@ body {
   color: #eee;
   background: #000;
   text-shadow:
-    -2px -2px 0 #17202a,
-    2px -2px 0 #17202a,
-    -2px 2px 0 #17202a,
-    2px 2px 0 #17202a;
+    -1px -1px 0 #17202a,
+    1px -1px 0 #17202a,
+    -1px 1px 0 #17202a,
+    1px 1px 0 #17202a,
+    -1px 0px 0 #17202a,
+    0px -1px 0 #17202a,
+    0px 1px 0 #17202a,
+    1px 0px 0 #17202a;
 }
 
 .column {
@@ -161,7 +165,7 @@ button:hover {
   border: 2px solid #3030da;
 }
 
-::-moz-selection {
+::selection {
   background: Highlight;
   color: HighlightText;
 }
