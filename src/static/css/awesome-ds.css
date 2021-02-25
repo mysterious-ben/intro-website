@@ -89,7 +89,7 @@ a:link, a:visited {
 
 a:hover, a:active {
   color: #fff;
-  background-color: #1720a6;
+  background-color: #3030da;
 }
 
 code {
@@ -151,8 +151,8 @@ ul {
 }
 
 button {
-  color: #303090;
-  border: 2px solid #303090;
+  color: #172050;
+  border: 2px solid #172050;
   font-size: 1.5em;
   background-color: #000;
   padding: 5px 20px;
@@ -166,6 +166,6 @@ button:hover {
 }
 
 ::selection {
-  background: Highlight;
-  color: HighlightText;
+  background-color: #303090;
+  color: #eee;
 }
