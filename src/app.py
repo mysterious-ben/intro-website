@@ -157,7 +157,7 @@ def change_color_graph_scatter(n_clicks):
 
 @flask_app.route("/")
 def index():
-    return flask.render_template("index.html")
+    return flask.render_template("index.html", host_url=flask.request.host_url)
 
 
 @flask_app.route("/cv")
