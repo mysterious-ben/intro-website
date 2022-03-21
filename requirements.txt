@@ -4,5 +4,5 @@ flask_monitoringdashboard==3.1.0
 notifiers==1.2.1
 numpy==1.18.4
 plotly==4.8.1
-waitress==1.4.4
+waitress==2.1.1
 Werkzeug==1.0.1
