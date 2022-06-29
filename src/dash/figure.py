@@ -73,6 +73,7 @@ def generate_layout():
                     config={
                         "displayModeBar": False,
                         "scrollZoom": False,
+                        'staticPlot': True,
                     },
                     style={
                         "display": "flex",
@@ -112,6 +113,6 @@ def generate_layout():
                 # 'text-align': 'center',
                 "height": "99vh",
             },
-        )
+        ),
     )
     return layout
