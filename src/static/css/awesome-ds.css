@@ -17,9 +17,10 @@ h3 {font-size: 1.4em;}
 }
 
 .article_item {
+  text-align: center;
   vertical-align: middle;
   font-size: 1.1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.1em;
 }
 
 @media screen and (min-width: 700px) {
@@ -33,7 +34,7 @@ h3 {font-size: 1.4em;}
   h2 {font-size: 1.6em;}
   h3 {font-size: 1.5em;}
   .article_item {font-size: 1.3em;}
-  .article_list {list-style: circle; padding-left: 20px;}
+  /* .article_list {list-style: circle; padding-left: 20px;} */
   .row {
     display: flex;
     flex-direction: row;

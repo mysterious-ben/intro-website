@@ -3,10 +3,10 @@
 {% block content %}
     {% include 'navbar.html' %}
     <div class="row" style="justify-content:center;margin-top:15px;">
-        <div class="column border padding" style="max-width:780px;padding-bottom:20px;">
+        <div class="column border padding" style="max-width:780px;padding-bottom:15px;">
             <h1 style="margin-bottom:0px">Blog</h1>
             <h3 style="margin-top:15px;margin-bottom:25px;">Data Science and Stuff</h3>
-            <ul class="article_list">
+            <!-- <ul class="article_list">
                 {% for article in articles %}
                     <li class="article_item">
                         <a href="blog/{{ article.title }}">
@@ -14,7 +14,14 @@
                         </a>
                     </li>
                 {% endfor %}
-            </ul>
+            </ul> -->
+            {% for article in articles %}
+                <div class="article_item">
+                    <a href="blog/{{ article.title }}">
+                        {{ article.title_fancy }} ({{ article.date_created }})
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>    
 {% endblock %}
