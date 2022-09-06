@@ -31,5 +31,5 @@ repos:
       - id: check-yaml
       - id: requirements-txt-fixer
       - id: check-added-large-files
-        args: ['--maxkb=1000']
+        args: ['--maxkb=1500']
       - id: check-merge-conflict
