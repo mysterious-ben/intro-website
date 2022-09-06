@@ -9,8 +9,22 @@ h1 {font-size: 1.7em;}
 h2 {font-size: 1.4em;}
 h3 {font-size: 1.4em;}
 
+.article_list {
+  list-style-position: outside;
+  align-items: center;
+  list-style: none;
+  padding-left: 10px;
+}
+
+.article_item {
+  vertical-align: middle;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+
 @media screen and (min-width: 700px) {
   html {font-size: 15px;}
+  .article_item {font-size: 1.2em;}
 }
 
 @media screen and (min-width: 900px) {
@@ -18,6 +32,8 @@ h3 {font-size: 1.4em;}
   h1 {font-size: 2.2em;}
   h2 {font-size: 1.6em;}
   h3 {font-size: 1.5em;}
+  .article_item {font-size: 1.3em;}
+  .article_list {list-style: circle; padding-left: 20px;}
   .row {
     display: flex;
     flex-direction: row;
@@ -196,9 +212,3 @@ button:hover, button:focus {
   background-color: #3030da;
 }
 
-
-/* Blog */
-
-.article_link {
-  font-size: 1.3em;
-}
