@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Data Science Profile</title>
-     <!-- CSS Flex Layout -->
-    <link rel="stylesheet"  href="/static/css/awesome-ds.css">
-</head>
-<body style="max-width:1560px;margin:0 auto 0 auto;">
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
     <div class="row">
         <div class="column">
-            <h1 style="margin-bottom:0px;">Yaroslav Kopotilov, Data Scientist</h1>
+            <h1 style="margin-bottom:0px">Yaroslav Kopotilov, Data Scientist</h1>
             <h3 style="margin-top:15px;margin-bottom:10px;">Remote positions only</h3>
         </div>
     </div>
@@ -126,4 +120,4 @@
             </dl>
         </div>
     </div>
-</body>
+{% endblock %}

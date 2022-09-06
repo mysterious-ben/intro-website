@@ -1,4 +1,4 @@
-/* Grid */
+/* Flex grid */
 
 .column {
   flex-basis: 100%;
@@ -32,11 +32,10 @@ h3 {font-size: 1.4em;}
 }
 
 
-/* Style */
+/* General */
 
 body {
   font-family: monospace;
-  /* font-size: 15px; */
   color: #eee;
   background: #000;
   text-shadow:
@@ -102,7 +101,6 @@ code {
 }
 
 .bmargin {
-  /* margin-bottom: 28px; */
   margin-bottom: 32px;
 }
 
@@ -170,4 +168,37 @@ button:hover, button:focus {
 ::selection {
   background-color: #2e439e;
   color: #eee;
+}
+
+
+/* Navigation bar */
+
+.topnav {
+  /* background-color: #222; */
+  overflow: hidden;
+  border-bottom: 1px solid #666;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.topnav a {
+  float: left;
+  color: #eee;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  background-color: #172050;
+}
+
+.topnav a:hover, .topnav a:active {
+  color: #fff;
+  background-color: #3030da;
+}
+
+
+/* Blog */
+
+.article_link {
+  font-size: 1.3em;
 }

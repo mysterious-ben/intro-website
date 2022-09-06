@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Remote Data Science For Hire</title>
+    <!-- CSS Flex Layout -->
+    <link rel="stylesheet"  href="../static/css/awesome-ds.css">
+</head>
+<body style="max-width:1560px;margin:0 auto 0 auto;">
+    {% include 'navbar.html' %}
+    <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
+        <iframe src="https://{{ host_url }}/_dash/" frameborder="0" height="100%" width="100%" scrolling="no"></iframe>
+    </div>
+    <div class="row" style="justify-content:center;margin-top:15px;">
+        <div class="column border padding" style="max-width:780px">
+            <h1>Remote Data Science For Hire</h1>
+            <p>Hi! If you need a data scientist 
+                to find the best data science solution for your case, 
+                to work on a project from the initial concept to production, 
+                or to lead a data science team -
+                then you're in the right place. 
+                Feel free to reach out if you have any questions!</p>
+            <p>Please note that I work remotely but I'm okay with occasional business trips.</p>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="column centered">
+            <a href="/"><h2 style="margin:20px 15px">
+                <span style="width:100%; display:inline-block">(click here to check my profile)</span>
+            </h2></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column centered">
+            <a href="/about"><h2 style="margin:20px 15px">
+                <span style="width:100%; display:inline-block">(or here to check my blog posts)</span>
+            </h2></a>
+        </div>
+    </div> -->
+</body>
+</html>

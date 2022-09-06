@@ -157,17 +157,58 @@ def change_color_graph_scatter(n_clicks):
 
 @flask_app.route("/")
 def index():
-    return flask.render_template("index.html", host_url=flask.request.host)
-
-
-@flask_app.route("/cv")
-def cv():
     email_name, email_domain = __config.email.split("@")
     return flask.render_template(
         "cv.html",
         email_name=email_name,
         email_domain=email_domain,
     )
+
+
+@flask_app.route("/cv")
+def cv():
+    return flask.redirect("/", code=302)
+
+
+@flask_app.route("/about")
+def about():
+    return flask.render_template("about.html", host_url=flask.request.host)
+
+
+def _parse_article_meta_tuple(line: str, expected_key: str) -> str:
+    key, value = line.strip().split(": ")
+    if key != expected_key:
+        raise ValueError(f"Key '{key}' but expected '{expected_key}'")
+    value = value.strip(r'"')
+    return value
+
+
+def _parse_article_meta(file: Path) -> dict:
+    meta = {}
+    meta["title"] = file.stem
+    meta["title_fancy"] = meta["title"].replace("_", " ").capitalize()
+    with open(file, "rt") as f:
+        if f.readline().strip() == "<!-- META START":
+            line = f.readline()
+            meta["date_created"] = _parse_article_meta_tuple(line, "date_created")
+        else:
+            meta["date_created"] = ""
+    return meta
+
+
+@flask_app.route("/blog")
+def blog():
+    metas = []
+    for file in (Path(__file__).parent / "templates/blog").glob("*"):
+        meta = _parse_article_meta(file)
+        metas.append(meta)
+    metas = sorted(metas, key=lambda x: x["date_created"], reverse=True)
+    return flask.render_template("blog.html", articles=metas)
+
+
+@flask_app.route("/blog/<string:title>")
+def display_article(title: str):
+    return flask.render_template(f"blog/{title}.html")
 
 
 if __name__ == "__main__":
