@@ -6,7 +6,7 @@ itsdangerous==2.0.1  # temporary fix for flask
 markdown==3.4.1
 markupsafe==2.0.1  # temporary fix for flask
 notifiers==1.2.1
-numpy==1.18.4
+numpy==1.22.0
 plotly==4.8.1
 waitress==1.4.4
 Werkzeug==1.0.1
