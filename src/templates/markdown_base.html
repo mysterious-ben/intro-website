@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    <div class="row" style="justify-content:center;margin-top:15px;">
+        <div class="column border padding" style="max-width:780px;padding-bottom:15px;">
+            {% block markdown_content %}
+            {% endblock %}
+        </div>
+    </div>    
+{% endblock %}

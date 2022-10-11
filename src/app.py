@@ -9,6 +9,7 @@ from pathlib import Path
 
 import flask
 import flask_monitoringdashboard
+import markdown
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 
 import dash
@@ -208,7 +209,21 @@ def blog():
 
 @flask_app.route("/blog/<string:title>")
 def display_article(title: str):
-    return flask.render_template(f"blog/{title}.html")
+    template_path = Path("src/templates")
+    if (template_path / Path(f"blog/{title}.html")).exists():
+        return flask.render_template(f"blog/{title}.html")
+    elif (template_path / Path(f"blog/{title}.md")).exists():
+        with open(template_path / Path(f"blog/{title}.md"), "rt") as f:
+            text = f.read()
+        html = markdown.markdown(text)
+        html = (
+            "{% extends 'markdown_base.html' %}\n{% block markdown_content %}\n"
+            + html
+            + "\n{% endblock %}"
+        )
+        return flask.render_template_string(html)
+    else:
+        raise FileNotFoundError(title)
 
 
 if __name__ == "__main__":
