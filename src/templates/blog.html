@@ -6,15 +6,6 @@
         <div class="column border padding" style="max-width:780px;padding-bottom:15px;">
             <h1 style="margin-bottom:0px">Blog</h1>
             <h3 style="margin-top:15px;margin-bottom:25px;">Data Science and Stuff</h3>
-            <!-- <ul class="article_list">
-                {% for article in articles %}
-                    <li class="article_item">
-                        <a href="blog/{{ article.title }}">
-                            {{ article.title_fancy }} ({{ article.date_created }})
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul> -->
             {% for article in articles %}
                 <div class="article_item">
                     <a href="blog/{{ article.title }}">
@@ -22,6 +13,12 @@
                     </a>
                 </div>
             {% endfor %}
+            <div class="centered" style="padding-bottom:15px;">---OLDER ARTICLES---</div>
+            <div class="article_item">
+                <a href="https://www.toptal.com/machine-learning/embeddings-in-machine-learning">
+                    Embeddings in Machine Learning
+                </a>
+            </div>
         </div>
     </div>    
 {% endblock %}
