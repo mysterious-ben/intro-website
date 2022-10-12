@@ -22,7 +22,7 @@ Note 2. It works the same with confidence intervals.
 Note 3. Do not confuse it with "early stopping" used to reduce overfitting of a Machine Learning model, which is a perfectly legitimate technique.
 
 ### Testing multiple hypotheses
-In our busy times, beating a disease quicker is great but there are other things to consider as well. For example, the lab might want to check whether the new drug is safer. Or has fewer annoying short-term side effects. Or lower tolerance. Or whether it's more effective against a particular strain... Et cetera. Okay, can we check all these hypotheses at once? If the new drag beats the old drug in at least one domain, we may consider it to be a success and start producing it.
+In our busy times, beating a disease quicker is great but there are other things to consider as well. For example, the lab might want to check whether the new drug is safer. Or has fewer annoying short-term side effects. Or lower tolerance. Or whether it's more effective against a particular strain... Et cetera. Okay, can we check all these hypotheses at once? If the new drug beats the old drug in at least one domain, we may consider it to be a success and start producing it.
 
 Yes... and no. If you test multiple hypotheses at once and decide that at least one success (in our case, p-value < 0.05) is an overall success, you reduce statistical significance of the test. For example, if you tested 5 hypotheses with significance level of 5% each, the combined significance level will be 1 - (0.95)^5 = 23%. For 10 hypotheses it will be 40%. So you'll have a 40% chance to invest in a new drug that is not actually better than the existing one. Yikes! 
 
@@ -33,7 +33,7 @@ Say, you designed your experiment properly and avoided the pitfalls described ab
 
 Yeah... I know it. You know it =) You shouldn't have done that! If you modify your experiment whenever the outcome does not satisfy you, you get overly optimistic results. In fact, this is the overarching theme of [my previous article about overfitting](https://datascienceforhire.net/blog/art_of_overfitting).
 
-Note. Unfortunately, in industry you can't always commit never to change your experiment. The requirements change, new ideas flow in, your budget may get cut, your boss may throw in his very important opinion. Just be aware: more ad hoc tweaks you make, less reliable your results will be.
+Note. Unfortunately, in industry you can't always commit never to change your experiment. The requirements change, new ideas flow in, your budget may get cut, your boss may throw in his very important opinion. Just be aware: the more ad hoc tweaks you make, the less reliable your results will be.
 
 ### No baseline and success criteria
 How good is good enough? When you don't know
@@ -41,7 +41,7 @@ How good is good enough? When you don't know
 - you'll have trouble estimating whether you have enough data for your experiment (see below); and 
 - you'll likely spend more time on research and will be tempted to add new tests because you don't know when to stop.
 
-Note 1. In industry, you'll sometime get a research task without definite criteria of success. It's then up to you to make (at least) a rough estimate of what may count as success, based on your industry knowledge.
+Note 1. In industry, you'll sometimes get a research task without definite criteria of success. It's then up to you to make (at least) a rough estimate of what may count as success, based on your industry knowledge.
 
 Note 2. Having a baseline also helps to produce meaningful success criteria. A baseline can be human performance, results of a previous study or a simple model, either ML or rule-based.
 
