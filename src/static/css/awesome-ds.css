@@ -137,10 +137,31 @@ h4 {
   font-size: 1em;
 }
 
-ul {
+summary {
+  font-size: 1em;
+}
+
+summary:hover {
+  background: #2d3148a9;
+}
+
+/* details:hover, details:focus {
+  background: #172050;
+} */
+
+/* details {
+  font-size: 1em;
+} */
+
+.ul_skills {
   margin-top: 10px;
   margin-bottom: 5px;
 }
+
+/* ul {
+  margin-top: 10px;
+  margin-bottom: 5px;
+} */
 
 .centered {
     text-align: center;
