@@ -12,7 +12,7 @@ show-logs:
 	cat logs/intro_website.log | tail
 
 dc-start:
-	docker-compose down; docker-compose build; docker-compose up -d --remove-orphans
+	docker-compose build; docker-compose down; docker-compose up -d --remove-orphans
 
 dc-show-logs:
 	docker-compose logs --tail 10
