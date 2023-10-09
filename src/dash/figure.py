@@ -5,10 +5,9 @@ Generate Dash figure
 
 import math
 
-import dash_core_components as dcc
-import dash_html_components as html
 from plotly import graph_objects as go
 
+from dash import dcc, html
 from src import config
 from src.dash.data import _get_data
 
@@ -73,7 +72,7 @@ def generate_layout():
                     config={
                         "displayModeBar": False,
                         "scrollZoom": False,
-                        'staticPlot': True,
+                        "staticPlot": True,
                     },
                     style={
                         "display": "flex",

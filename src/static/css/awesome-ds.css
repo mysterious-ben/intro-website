@@ -234,3 +234,28 @@ button:hover, button:focus {
   background-color: #3030da;
 }
 
+.meme_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 2em;
+}
+
+.double_img_container {
+  text-align: center;
+  display:flex;
+  flex-direction:row;
+  flex: 0 1 500px;
+  justify-content:space-evenly;
+}
+
+.double_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  max-width: 500px;
+  /* margin-bottom: 2em; */
+}

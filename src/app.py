@@ -201,8 +201,11 @@ def _parse_article_meta(file: Path) -> dict:
 def blog():
     metas = []
     for file in (Path(__file__).parent / "templates/blog").glob("*"):
-        meta = _parse_article_meta(file)
-        metas.append(meta)
+        if file.is_file() and not file.name.startswith("__"):
+            meta = _parse_article_meta(file)
+            metas.append(meta)
+        else:
+            logger.debug(f"skipping {file.name} (not a standard article file)")
     metas = sorted(metas, key=lambda x: x["date_created"], reverse=True)
     return flask.render_template("blog.html", articles=metas)
 
