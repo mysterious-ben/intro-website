@@ -116,7 +116,7 @@ Good, we have plenty of validation methods to choose from. So, which one to choo
 
 Here are some of the findings.
 
-1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The example below shows estimated model MAE by fold using CV (I) and WF validation (II) for Linear Regression on an ARMA time series.
+1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The images below show estimated model MAE by fold using CV (left) and WF validation (right) for Linear Regression on an ARMA time series.
 
 <!-- ![[/static/images/ts_cv_arma_lr.png|200]] ![[/static/images/ts_wf_arma_lr.png|200]] -->
 <div class="double_img_container">
@@ -124,14 +124,14 @@ Here are some of the findings.
     <img src="/static/images/ts_wf_arma_lr.png" alt="cv_all_the_things" class="double_img"/> 
 </div>
 
-2) **For non-stationary processes** with a stochastic mean drift, blocked k-fold CV produces an interesting result: an error estimate that is lower in the inner folds. This effect is especially noticeable for **models with an intercept** (this includes Gradient Boosted Trees which has an implicit "intercept" term). Why? The information about the mean drift can be learned by an intercept term more efficiently in the middle fold, where it becomes a problem of interpolation rather than extrapolation. Hence, we will get an optimistic bias in a model error estimate. The example below shows estimated model MAE by fold using CV for Linear Regression with an intercept (I) and Gradient Boosted Trees (II) on an ARMA time series with a stochastic trend.
+2) **For non-stationary processes** with a stochastic mean drift, blocked k-fold CV produces an interesting result: an error estimate that is lower in the inner folds. This effect is especially noticeable for **models with an intercept** (this includes Gradient Boosted Trees which has an implicit "intercept" term). Why? The information about the mean drift can be learned by an intercept term more efficiently in the middle fold, where it becomes a problem of interpolation rather than extrapolation. Hence, we will get an optimistic bias in a model error estimate. The images below show estimated model MAE by fold using CV for Linear Regression with an intercept (left) and Gradient Boosted Trees (right) on an ARMA time series with a stochastic trend.
 
 <div class="double_img_container">
     <img src="/static/images/ts_cv_arma_trend_lr_i.png" alt="cv_all_the_things" class="double_img"/>
     <img src="/static/images/ts_cv_arma_trend_gb.png" alt="cv_all_the_things" class="double_img"/> 
 </div>
 
-3) **Walking-origin forward validation** often has a significantly higher model error estimate variance for earlier folds compared to WF validation. Therefore, its usability is doubtful. The example below shows estimated model MAE by fold using walking-origin forward validation (I) and WF validation (II) for Linear Regression with an intercept on an ARMA time series with a stochastic trend.
+3) **Walking-origin forward validation** often has a significantly higher model error estimate variance for earlier folds compared to WF validation. Therefore, its usability is doubtful. The images below show estimated model MAE by fold using walking-origin forward validation (left) and WF validation (right) for Linear Regression with an intercept on an ARMA time series with a stochastic trend.
 
 <div class="double_img_container">
     <img src="/static/images/ts_rofv_arma_trend_lr_i.png" alt="cv_all_the_things" class="double_img"/>
