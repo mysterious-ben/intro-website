@@ -144,7 +144,8 @@ Here are some of the findings.
 
 There is one more thing to consider. Let's take MSE as our model error. Then we can compute the difference between the real MSE and our estimate (for example, computed via CV) as
 
-$$ E(MSE - \widehat{MSE})^2 = (E(MSE - \widehat{MSE}))^2 + Var(\widehat{MSE}) = bias^2 + variance $$
+<!-- $$ \mathbb{E}(\mathrm{MSE} - \widehat{\mathrm{MSE}})^2 = (\mathbb{E}(\mathrm{MSE} - \widehat{\mathrm{MSE}}))^2 + \mathbf{Var}(\widehat{\mathrm{MSE}}) = \mathrm{bias}^2 + \mathrm{variance} $$ -->
+<math display="block" class="tml-display" style="display:block math;"><mrow><mi>𝔼</mi><mo form="prefix" stretchy="false">(</mo><mrow><mrow><mi mathvariant="normal">MSE</mi></mrow></mrow><mo>−</mo><mover><mrow><mrow><mi mathvariant="normal">MSE</mi></mrow></mrow><mo stretchy="true" style="math-style:normal;math-depth:0;">^</mo></mover><msup><mo form="postfix" stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mo form="prefix" stretchy="false">(</mo><mi>𝔼</mi><mo form="prefix" stretchy="false">(</mo><mrow><mrow><mi mathvariant="normal">MSE</mi></mrow></mrow><mo>−</mo><mover><mrow><mrow><mi mathvariant="normal">MSE</mi></mrow></mrow><mo stretchy="true" style="math-style:normal;math-depth:0;">^</mo></mover><mo form="postfix" stretchy="false">)</mo><msup><mo form="postfix" stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mrow><mi>𝐕𝐚𝐫</mi></mrow><mo form="prefix" stretchy="false">(</mo><mover><mrow><mrow><mi mathvariant="normal">MSE</mi></mrow></mrow><mo stretchy="true" style="math-style:normal;math-depth:0;">^</mo></mover><mo form="postfix" stretchy="false">)</mo><mo>=</mo><msup><mrow><mrow><mi mathvariant="normal">bias</mi></mrow></mrow><mn>2</mn></msup><mo>+</mo><mrow><mrow><mi mathvariant="normal">variance</mi></mrow></mrow></mrow></math>
 
 A look-ahead bias will be the part of the bias term. Now, why do you need to estimate out-of-sample model error? If the goal is...
 
