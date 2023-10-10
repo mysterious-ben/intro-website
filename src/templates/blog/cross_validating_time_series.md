@@ -157,15 +157,15 @@ Thus, it may be okay to have a look-ahead bias for model hyper-parameter tuning.
 
 <img src="/static/images/cv_or_not_cv.jpg" alt="cv_all_the_things" class="meme_img"/>
 
-Dealing with time series data is tough. If you have a limited amount of data and don't use it efficiently, you risk getting a very volatile estimate. On the other hand, if you aren't careful you can be impacted by look-ahead bias and get a rather optimistic estimate. So selecting the right evaluation method is essential.
+Dealing with time series data is tough. If you have a limited amount of data and don't use it efficiently, you risk getting a very volatile estimate. On the other hand, if you aren't careful you can be impacted by look-ahead bias and get a rather optimistic estimate. So selecting the right evaluation method is essential. **My default method is WF validation**, which should be a solid choice for most situations.
 
-**My default method is WF validation**, which should be a solid choice for most situations. Still, **the optimal choice depends on your model and data**. Here is my humble advice based on the findings above:
+Still, the optimal choice depends on your model and data. **Here is my humble advice** based on the findings above:
 
-1. Go with blocked k-fold CV if your time series is stationary, especially if you have a limited amount of data. Here, look-ahead shouldn't be a big problem, and you'll be able to use absolutely all your data for model evaluation.
-2. Go with WF validation if your time series is (possibly) not stationary, especially if your goal is to evaluate the real out-of-sample model performance. Here, CV is definitely not safe to use as look-ahead bias may have a sizable impact on your estimates.
-3. Go with WF validation if you're using a sequential model (e.g., RNN or State Space). These models are susceptible to look-ahead bias; also, it's just more straightforward to evaluate them on the "future" data.
-4. *Maybe* go with blocked k-fold CV if your time series is not stationary but your goal is to tune model hyper-parameters, especially if you think that your model should not be significantly impacted by look-ahead bias (e.g., it has no intercept term).
-5. Treat your evaluation method as yet another hyper-parameter to optimize if you have plenty of data and time ~~to waste~~, and (just a tiny bit of) perfectionism disorder.
+1. Go with **blocked k-fold CV** if your time series is stationary, especially if you have a limited amount of data. Here, look-ahead shouldn't be a big problem, and you'll be able to use absolutely all your data for model evaluation.
+2. Go with **WF validation** if your time series is (possibly) not stationary, especially if your goal is to evaluate the real out-of-sample model performance. Here, CV is definitely not safe to use as look-ahead bias may have a sizable impact on your estimates.
+3. Go with **WF validation** if you're using a sequential model (e.g., RNN or State Space). These models are susceptible to look-ahead bias; also, it's just more straightforward to evaluate them on the "future" data.
+4. *Maybe* go with **blocked k-fold CV** if your time series is not stationary but your goal is to tune model hyper-parameters, especially if you think that your model should not be significantly impacted by look-ahead bias (e.g., it has no intercept term).
+5. Treat your evaluation method as yet another hyper-parameter to optimize if you have plenty of data and time for your experiments, and (just a tiny bit of) perfectionism disorder.
 
 Keep in mind that evaluation is only one of the many parts of your data analysis. If you strive for robust and realistic results, you may want to check...
 
