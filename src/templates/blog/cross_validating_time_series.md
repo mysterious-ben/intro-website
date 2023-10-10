@@ -58,7 +58,7 @@ Pros:
 
 - Cheap to compute
 - No look-ahead bias
-- Easy to use with sequential models (e.g., STD and RNN)
+- Easy to use with sequential models (e.g., State Space and RNN)
 
 Cons:
 
@@ -70,7 +70,7 @@ Cons:
 Pros:
 
 - No look-ahead bias
-- Easy to use with sequential models (e.g., STD and RNN)
+- Easy to use with sequential models (e.g., State Space and RNN)
 
 Cons:
 
@@ -98,7 +98,7 @@ Cons:
 
 - Look-ahead bias
 
-3.b) **Combinatorial CV** (the term coined in the book **[Lopez2018]**) is a more "sophisticated" cousin of blocked k-fold CV. Like before, data is split in k continuous blocks but p blocks ($1 \leq p \leq k$) can be selected for testing at once. This produces more data splits ($C_k^p$ instead of $k$), which may be useful for algorithmic strategy backtesting as we can generate several backtest paths at once.
+3.b) **Combinatorial CV** (the term coined in the book **[Lopez2018]**) is a more "sophisticated" cousin of blocked k-fold CV. Like before, data is split in k continuous blocks but p blocks (1≤p≤k) can be selected for testing at once. This produces more data splits, which may be useful for algorithmic strategy backtesting as we can generate several backtest paths at once.
 
 Pros (w.r.t. blocked k-fold CV):
 
@@ -116,7 +116,7 @@ Good, we have plenty of validation methods to choose from. So, which one to choo
 
 Here are some of the findings.
 
-1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The images below show estimated model MAE by fold using CV (left) and WF validation (right) for Linear Regression on an ARMA time series.
+1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The images below show estimated model MAE (= mean average error) by fold using CV (left) and WF validation (right) for Linear Regression on an ARMA time series.
 
 <!-- ![[/static/images/ts_cv_arma_lr.png|200]] ![[/static/images/ts_wf_arma_lr.png|200]] -->
 <div class="double_img_container">
