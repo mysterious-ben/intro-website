@@ -116,7 +116,7 @@ Good, we have plenty of validation methods to choose from. So, which one to choo
 
 Here are some of the findings.
 
-1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The images below show estimated model MAE (= mean average error) by fold using CV (left) and WF validation (right) for Linear Regression on an ARMA time series.
+1) **For stationary processes**, blocked k-fold CV is generally superior to WF validation, showing smaller bias and variance for earlier folds. The images below show estimated model MAE (= median average error) by fold using CV (left) and WF validation (right) for Linear Regression on an ARMA time series.
 
 <!-- ![[/static/images/ts_cv_arma_lr.png|200]] ![[/static/images/ts_wf_arma_lr.png|200]] -->
 <div class="double_img_container">
