@@ -6,7 +6,7 @@ META END -->
 
 ### TL;DR
 
-Using classic k-fold CV to evaluate an ML model on time series data may produce incorrect results due to look-ahead bias. Instead, you may want to opt out for walk-forward validation, which is (probably) the safest evaluation method for time series data. However, the optimal choice will depend on your data and model.
+Using classic k-fold CV to evaluate an ML model on time series data can produce incorrect results due to look-ahead bias. Instead, consider walk-forward validation, which is (probably) the safest evaluation method for time series data. However, the optimal choice will depend on your data and model (you may want to check the article below).
 
 ### Can we cross-validate a time series?
 
@@ -14,7 +14,7 @@ Using classic k-fold CV to evaluate an ML model on time series data may produce 
 <!-- ![cv_all_the_things](/static/images/cv_all_the_things.jpg) -->
 <img src="/static/images/cv_all_the_things.jpg" alt="cv_all_the_things" class="meme_img"/>
 
-**Data scientists cross-validate everything.** This is just the natural order of things. Unless you are dealing with neural networks, which are notoriously difficult to fit even once (let alone k times), the chances are that you use CV 10 times out of 10. The chances are also that you sometimes overuse it to the point where you totally overfit your model but this topic deserves [a separate article](https://datascienceforhire.net/blog/art_of_overfitting).
+**Data scientists cross-validate everything.** This is just the natural order of things. Unless you are dealing with neural networks, which are notoriously difficult to fit even once (let alone k times), the chances are that you use CV 10 times out of 10.
 
 The good old k-fold CV is great. It's intuitive. It has a solid 50-year track record. It's implemented in every mainstream language. It's backed up by theory: it's guaranteed to give a consistent estimate of an out-of-sample error with lower variance than a single train-test split. But there is a catch: most theoretical results regarding CV assume that our data is i.i.d. (for example, see **[Bayle2020]**). What if you're dealing with time series data?
 
@@ -157,7 +157,7 @@ Thus, it may be okay to have a look-ahead bias for model hyper-parameter tuning.
 
 <img src="/static/images/cv_or_not_cv.jpg" alt="cv_all_the_things" class="meme_img"/>
 
-If you're dealing with time series data, selecting the optimal evaluation method for your specific task might not be trivial. To generalize, you have three strategies:
+Dealing with time series data is tough. If you have a limited amount of data and don't use it efficiently, you risk getting a very volatile estimate. On the other hand, if you aren't careful you can be impacted by look-ahead bias and get a very optimistic estimate. So selecting the right evaluation method is essential. **To generalize, you have three strategies:**
 
 1. select a validation method based on your understanding of your data and model: the number of data points, time series stationarity, and computational cost to fit the model;
 2. go with the safest option, which is (in my opinion) walk-forward validation; or
@@ -165,9 +165,14 @@ If you're dealing with time series data, selecting the optimal evaluation method
 
 What is the best strategy? Unfortunately, none is perfect. My humble advice would be to go with the strategy...
 
-1. if you've already developed a good intuition about your data and model;
+1. if you've developed a good intuition about your data and model (hopefully, this article helped);
 2. if you have no time to waste; and
-3. if you have plenty of time to waste and have issues with keeping your perfectionism under control.
+3. if you have plenty of data and time ~~to waste~~, and (just a tiny bit of) perfectionism disorder.
+
+Keep in mind that evaluation is only one of the many parts of your data analysis. If you strive for robust and realistic results, you may want to check...
+
+- [this (rather technical) notebook](https://datascienceforhire.net/blog/art_of_overfitting) showing how easy it is to overfit a model using CV; and
+- [the article](https://datascienceforhire.net/blog/experimental_design) exploring other most common pitfalls in experiment design.
 
 That's it for today! Evaluate your models responsibly.
 
