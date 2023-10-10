@@ -174,7 +174,7 @@ Keep in mind that evaluation is only one of the many parts of your data analysis
 - [this (rather technical) notebook](https://datascienceforhire.net/blog/art_of_overfitting) showing how easy it is to overfit a model using CV; and
 - [the article](https://datascienceforhire.net/blog/experimental_design) exploring other most common pitfalls in experiment design.
 
-That's it for today! Evaluate your models responsibly.
+That's it for today! Evaluate your models responsibly. And if you got any comments or questions - please don't hesitate to drop me a message.
 
 ### References
 
