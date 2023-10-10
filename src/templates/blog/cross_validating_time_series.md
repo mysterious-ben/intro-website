@@ -22,7 +22,7 @@ The good old k-fold CV is great. It's intuitive. It has a solid 50-year track re
 
 <img src="/static/images/captain_hindsight_2.jpg" alt="cv_all_the_things" class="meme_img"/>
 
-**Time series data is not i.i.d.** In particular, data samples from different time periods may produce different model weights during training and show different model errors during testing. This introduces the possibility of a look-ahead bias. If you use data from a later period ("the future") to evaluate model performance on an earlier period ("the present"), you may see an unrealistically small (a.k.a. optimistic) out-of-sample error estimate. Classic k-fold CV is prone to this phenomenon.
+**Time series data is not i.i.d.** Data samples from different time periods may produce different model weights during training and show different model errors during testing. In particular, if you train on data from a later period ("the future") to evaluate model performance on data from an earlier period ("the present"), you may see an optimistic (= unrealistically small) out-of-sample error estimate. This phenomenon is called **look-ahead bias**. Classic k-fold CV is prone to this problem.
 
 But does the future always hide something of a particular value? In other words, when does look-ahead bias matter? To answer that, we need to dive deeper into the world of probability and statistics.
 
@@ -65,7 +65,7 @@ Cons:
 - It cannot evaluate the earliest period of the history
 - High estimate variance because only one block is used for testing
 
-2.a) **Walk-forward validation** makes several splits of time series into the "past" and the "future", progressively moving the split point from earlier to later dates. The most "classical" approach uses an expanding window for the training set and a fixed-size window for the validation set but other methods are used as well.
+2.a) **Walk-forward validation** makes several splits of time series into the "past" and the "future", progressively moving the split point from earlier to later dates. The most "classical" approach uses an expanding window for the training set and a fixed-size window for the validation set but other methods are used as well. Unlike CV, WF validation never uses data from the "future" for training. There are several modifications of WF validation: for example, see **[Tashman2000]**.
 
 Pros:
 
@@ -77,7 +77,7 @@ Cons:
 - It cannot evaluate the earliest period of the history
 - A pessimistic estimate bias because the size of the training set is growing over time
 
-2.b) **Moving-origin forward validation** is similar to WF validation but it uses an expanding window for the training and validation sets. There are more possible modifications of WF validation: for example, see **[Tashman2000]**.
+2.b) **Moving-origin forward validation** is a modification of WF validation that uses an expanding window for both training and validation sets (i.e., all data is used in every split).
 
 Pros (w.r.t. WF validation):
 
@@ -157,17 +157,15 @@ Thus, it may be okay to have a look-ahead bias for model hyper-parameter tuning.
 
 <img src="/static/images/cv_or_not_cv.jpg" alt="cv_all_the_things" class="meme_img"/>
 
-Dealing with time series data is tough. If you have a limited amount of data and don't use it efficiently, you risk getting a very volatile estimate. On the other hand, if you aren't careful you can be impacted by look-ahead bias and get a very optimistic estimate. So selecting the right evaluation method is essential. **To generalize, you have three strategies:**
+Dealing with time series data is tough. If you have a limited amount of data and don't use it efficiently, you risk getting a very volatile estimate. On the other hand, if you aren't careful you can be impacted by look-ahead bias and get a rather optimistic estimate. So selecting the right evaluation method is essential.
 
-1. select a validation method based on your understanding of your data and model: the number of data points, time series stationarity, and computational cost to fit the model;
-2. go with the safest option, which is (in my opinion) walk-forward validation; or
-3. treat your evaluation method as yet another hyper-parameter and optimize it as well.
+**My default method is WF validation**, which should be a solid choice for most situations. Still, **the optimal choice depends on your model and data**. Here is my humble advice based on the findings above:
 
-What is the best strategy? Unfortunately, none is perfect. My humble advice would be to go with the strategy...
-
-1. if you've developed a good intuition about your data and model (hopefully, this article helped);
-2. if you have no time to waste; and
-3. if you have plenty of data and time ~~to waste~~, and (just a tiny bit of) perfectionism disorder.
+1. Go with blocked k-fold CV if your time series is stationary, especially if you have a limited amount of data. Here, look-ahead shouldn't be a big problem, and you'll be able to use absolutely all your data for model evaluation.
+2. Go with WF validation if your time series is (possibly) not stationary, especially if your goal is to evaluate the real out-of-sample model performance. Here, CV is definitely not safe to use as look-ahead bias may have a sizable impact on your estimates.
+3. Go with WF validation if you're using a sequential model (e.g., RNN or State Space). These models are susceptible to look-ahead bias; also, it's just more straightforward to evaluate them on the "future" data.
+4. *Maybe* go with blocked k-fold CV if your time series is not stationary but your goal is to tune model hyper-parameters, especially if you think that your model should not be significantly impacted by look-ahead bias (e.g., it has no intercept term).
+5. Treat your evaluation method as yet another hyper-parameter to optimize if you have plenty of data and time ~~to waste~~, and (just a tiny bit of) perfectionism disorder.
 
 Keep in mind that evaluation is only one of the many parts of your data analysis. If you strive for robust and realistic results, you may want to check...
 
@@ -186,9 +184,10 @@ That's it for today! Evaluate your models responsibly. And if you got any commen
 - [Lopez2018] Lopez de Prado, M., 2018. Advances in Financial Machine Learning.
 
 ### TODO
-*I strongly suspect that this will never be done.* Yet, it'd be good...
+*I strongly suspect that this will never be done.* Yet, it'd be good to expand my experimental study and...
 
-- to check the impact of embargoing and purging
-- to check efficiency of bootstrapping
-- to test more non-stationary time series
-- to test Seasonal-Trend Decomposition and State Space models
+- check the impact of embargoing and purging
+- check efficiency of bootstrapping
+- test more non-stationary time series
+- test Seasonal-Trend Decomposition and State Space models
+- run experiments on real-world [UK power data](https://yafin.app/landing/)
