@@ -28,7 +28,7 @@ But does the future always hide something of a particular value? In other words,
 
 ### Stationary processes
 
-<img src="/static/images/embrace_yourself_theory.jpg" alt="cv_all_the_things" class="meme_img"/>
+<img src="/static/images/brace_yourself_theory.jpg" alt="cv_all_the_things" class="meme_img"/>
 
 A data generation process is usually assumed to follow some sort of a rule regarding how the data distribution can change over time. Without this assumption, we have no hope of drawing any meaningful conclusions about the future. Imagine that a vitamin D supplement that boosts a patient's immune system can suddenly become absolutely inefficient with no observable change in the patient's biochemistry, their intake of other drugs, their environment, etc. In this case, it would be impossible to accurately evaluate its impact on the patient's health and determine the optimum daily dosage for the next month today.
 
