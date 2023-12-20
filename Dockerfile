@@ -1,5 +1,5 @@
 # Use the Debian image with python
-FROM python:3.8.6-slim-buster
+FROM python:3.10.8-slim-buster
 
 # Set the working directory to /app
 WORKDIR /app
