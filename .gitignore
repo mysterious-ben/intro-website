@@ -14,3 +14,6 @@ notebooks/
 
 logs/
 __*
+
+.DS_Store
+*.swp
